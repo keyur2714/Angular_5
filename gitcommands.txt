@@ -1,0 +1,8 @@
+
+
+
+git clone https://github.com/keyur2714/Angular_3.git
+git status
+git add .
+git commit -m"message"
+git push origin master
