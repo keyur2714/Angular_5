@@ -1,7 +1,27 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!    
-  </h1>
-  {{firstName}}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>
+        Welcome to {{ title }}!    
+      </h1>      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <app-message></app-message>
+    </div>
+    <div class="col-md-4">
+      <app-failure-message></app-failure-message>
+    </div>
+  </div>
+  <div class="row">
+    <div>
+      <app-warning-msg></app-warning-msg>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-student></app-student>
+    </div>
+  </div>
 </div>
-<app-message></app-message>

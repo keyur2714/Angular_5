@@ -9,7 +9,9 @@ export class MessageComponent implements OnInit {
 
   message: string = 'Hello Radhe Krishna...!';
 
-  constructor() { }
+  constructor() {
+    console.log("Message Component Inititalized.");
+   }
 
   ngOnInit() {
   }
