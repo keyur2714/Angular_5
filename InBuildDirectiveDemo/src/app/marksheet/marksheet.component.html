@@ -1,0 +1,26 @@
+<div class="col">
+  <table>
+    <tr>
+      <td><input type=text #total class="form-control" (blur)="setTotal(total.value)"/></td>
+      <td><button class="btn btn-warning" (click)="calcPer(total.value)" [disabled]="total === 0">Calculate Per</button></td>
+      {{total}}
+    </tr>    
+    <tr [ngSwitch]="grade">
+      <td *ngSwitchCase="'D'">
+        Your Grade is Distinction
+      </td>
+      <td *ngSwitchCase="'F'">
+        Your Grade is First Class
+      </td>
+      <td *ngSwitchCase="'S'">
+        Your Grade is Second Class
+      </td>
+      <td *ngSwitchCase="'P'">
+        Your Grade is Pass
+      </td>
+      <td *ngSwitchCase="'FAIL'">
+        Sorry you are Fail...!;
+      </td>
+    </tr>
+  </table>
+</div>

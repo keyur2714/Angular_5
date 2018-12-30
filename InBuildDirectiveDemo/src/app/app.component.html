@@ -1,0 +1,39 @@
+<div class="container">
+   <div class="row">
+    <div class="col"><h1>{{title}}</h1></div> 
+   </div> 
+   <div class="row">
+     <div class="col">
+      Age: <input type=text name=ag #ag class="form-control"/>         
+     </div>
+     <div class="col">
+        <button (click)="checkEligibility(ag.value)" class="btn btn-info">Submit</button>
+     </div>
+   </div>
+   <div class="row">
+    <div class="col" *ngIf="age >= 18" ngClass="ifCond">
+      You are Eligible for Voting...!
+    </div>    
+    <div class="col" *ngIf="age < 18" ngClass="elseCond">
+      You are Not Eligible for Voting...!
+    </div>        
+   </div>
+   <div class="row" *ngIf="age >= 18 then ifBlock;else elseBlock">            
+   </div>
+   <div class="row">     
+     <app-friends></app-friends>
+   </div>
+  <div class="row">
+    <app-marksheet></app-marksheet>
+  </div>
+  <ng-template #ifBlock>
+    <div class="col" [ngClass]="cssClassName">
+      {{msg}}
+    </div>        
+  </ng-template>
+  <ng-template #elseBlock>
+    <div class="col" [ngClass]="cssClassName">
+      {{msg}}
+    </div>        
+  </ng-template>
+</div>

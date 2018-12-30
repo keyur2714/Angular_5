@@ -1,0 +1,19 @@
+<div class="col">
+  <table class="table table-border">
+    <tr>
+      <thead>
+        <tr>
+          <th>Name</th>                    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let name of friendsList" (click)="setSelected(name)" [class.selected]="name === selectedFriendName">
+          <td>{{name}}</td>
+        </tr>
+        <tr *ngIf="selectedFriendName !== ''">
+          <td>Selected Friend Name is: {{selectedFriendName}}</td>
+        </tr>
+      </tbody>
+    </tr>
+  </table>
+</div>
