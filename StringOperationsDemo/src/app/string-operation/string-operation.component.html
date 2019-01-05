@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col">
+      <div class="card bg-dark text-white">
+        <div class="card-heading">String Operation</div>
+        <div class="card-body">
+          <div class="row form-group">
+            <div class="col-md-4">Enter Any String: </div>
+            <div class="col-md-4"><input type=text #str class="form-control" /></div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-3"><button class="btn btn-info" (click)="reverse(str.value)">Reverse</button></div>&nbsp;
+            <div class="col-md-3"><button class="btn btn-success" (click)="convertToUpperCase(str.value)">Capital</button></div>&nbsp;
+            <div class="col-md-3"><button class="btn btn-warning" (click)="convertToLowerCase(str.value)">LowerCase</button></div>            
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col">Result is : {{resultString}}</div>
+          </div>
+        </div>  
+      </div>
+    </div>
+</div>

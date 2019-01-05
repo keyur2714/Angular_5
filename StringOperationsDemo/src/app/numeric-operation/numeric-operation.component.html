@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12">
+      <div class="card bg-info text-white">
+        <div class="card-heading bg-warning">Numeric Operation</div>
+        <div class="card-body">
+          <div class="row form-group">
+            <div class="col-md-4">Enter Number 1: </div>
+            <div class="col-md-4"><input type=number class="form-control" name=num1 [(ngModel)]="number1" /></div>            
+          </div>
+          <div class="row form-group">
+            <div class="col-md-4">Enter Number 2: </div>
+            <div class="col-md-4"><input type=number class="form-control" name=num2 [(ngModel)]="number2" /></div>
+          </div>
+          <div class="row">
+            <div class="col-md-1"><button class="btn btn-dark" (click)="plus()">+</button></div>&nbsp;
+            <div class="col-md-1"><button class="btn btn-success" (click)="minus()">-</button></div>&nbsp;
+            <div class="col-md-1"><button class="btn btn-warning" (click)="mul()">*</button></div>&nbsp;
+            <div class="col-md-1"><button class="btn btn-warning" (click)="div()">/</button></div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col">Result is : {{resultString}}</div>
+          </div>
+        </div>  
+      </div>
+    </div>
+</div>

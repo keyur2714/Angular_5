@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col">
+    Total Marks: 
+  </div>
+  <div class="col">
+    <input type=text class="form-control" readonly name=totalMarks [ngModel]="totalMarks" />
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    Total Subject: 
+  </div>
+  <div class="col">
+    <input type=text class="form-control" readonly name=totalMarks [ngModel]="totalSubject" />
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <button (click)="calculatePer()" class="btn btn-info">Calc Per</button>
+  </div>
+  <div class="col">
+    <button [disabled]="per === 0" class="btn btn-success" (click)="calculateGrade()">Calc Grade</button>
+  </div>
+</div>
+<div class="row" [ngSwitch]="grade">
+  <div class="col" *ngSwitchCase="'D'">
+    Your Grade is : Distinction
+  </div>
+  <div class="col" *ngSwitchCase="'F'">
+    Your Grade is : First Class
+  </div>
+  <div class="col" *ngSwitchCase="'S'">
+    Your Grade is : Second Class
+  </div>
+  <div class="col" *ngSwitchCase="'P'">
+    Your Grade is : Pass Class
+  </div>
+  <div class="col" *ngSwitchCase="'FAIL'">
+    Your Grade is : Fail
+  </div>
+</div>

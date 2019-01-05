@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarksheetComponent implements OnInit {
 
-  total: number = 0;
+  totalMarks : number = 375;
+  totalSubject : number = 6;
   per: number = 0;
   grade: string = '';
 
@@ -16,23 +17,20 @@ export class MarksheetComponent implements OnInit {
   ngOnInit() {
   }
 
-  setTotal(total:string):void{
-    console.log(total);
-    this.total = parseInt(total);
+  calculatePer():void{
+    this.per = this.totalMarks / this.totalSubject;
   }
-
-  calcPer(total:string):void{
-    let per = (parseInt(total)/6);
-    this.per = per;
-    if(per >= 70)
+  calculateGrade():void{
+    if(this.per >= 70)
       this.grade = 'D';
-    else if(per >= 60)
+    else if(this.per >= 60)
       this.grade = 'F';
-    else if(per >= 50)
+    else if(this.per >= 50)
       this.grade = 'S';
-    else if(per >= 40)
+    else if(this.per >= 40)
       this.grade = 'P';
     else
       this.grade = 'FAIL';
-  }
+  }  
+
 }
