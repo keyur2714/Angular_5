@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th *ngFor="let columnHeader of columnHeaderList">{{columnHeader}}</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of dataList">
+          <td *ngFor="let column of columnNameList">
+            {{data[column]}}
+          </td>          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

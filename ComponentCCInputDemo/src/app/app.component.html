@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message></app-message>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message [message]="'Hello Radhe krishna...!'" [messageType]="messageType"></app-message>
+    </div>    
+  </div>
+  <app-customer-list></app-customer-list>
+  <app-item-list></app-item-list>
+  <div class="row form-group">
+    <div class="col">
+      <select name="country" class="form-control">
+        <option [value]="-1">-:Select Country:-</option>
+        <option *ngFor="let country of countryList" [value]="country">
+          {{country.desc}}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
