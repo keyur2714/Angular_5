@@ -6,6 +6,7 @@ import { MessageComponent } from './message/message.component';
 import { MyGridComponent } from './my-grid/my-grid.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { MyDropdownComponent } from './my-dropdown/my-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     MessageComponent,
     MyGridComponent,
     ItemListComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    MyDropdownComponent
   ],
   imports: [
     BrowserModule

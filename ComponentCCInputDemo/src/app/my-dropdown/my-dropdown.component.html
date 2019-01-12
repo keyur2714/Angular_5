@@ -1,0 +1,10 @@
+<div class="row form-group">
+  <div class="col-md-{{size}}">
+    <select [name]="name" class="form-control">
+      <option [value]="-1">-:{{placeHolder}}:-</option>
+      <option *ngFor="let data of dataList" [value]="data">
+        {{data[propertyName]}}
+      </option>
+    </select>
+  </div>
+</div>
