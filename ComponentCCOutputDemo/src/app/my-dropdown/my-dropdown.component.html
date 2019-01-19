@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col">
+    <select class="form-control" [(ngModel)]="selectedLookup" (change)="getValue()">            
+      <option *ngFor="let data of dataList" [ngValue]="data">
+        {{data.desc}}
+      </option>  
+    </select>
+  </div>
+</div>
+
+<!-- {{selectedLookup | json}} -->
