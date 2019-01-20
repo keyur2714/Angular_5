@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+<input type=text #name/>
+<p>
+  <button (click)="save()">Submit</button>
+</p>
+<div>
+  <button (click)="reverse()">RevStr</button>
+  <button (click)="upperCase()">Capital</button>
+  <button (click)="lowerCase()">Small</button>
+</div>
+<h1 #result>
+  Entered Name is : {{nm}}
+</h1>
+<app-string-util></app-string-util> 
+
+<p #msg>
+  Hello Radhe Krishna..
+</p>
