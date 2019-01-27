@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormateDirective } from './formate.directive';
+import { MyLoopDirective } from './my-loop.directive';
+import { MyIfDirective } from './my-if.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormateDirective
+    FormateDirective,
+    MyLoopDirective,
+    MyIfDirective
   ],
   imports: [
     BrowserModule,
