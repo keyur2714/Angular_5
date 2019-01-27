@@ -1,0 +1,10 @@
+use ems
+
+show dbs
+
+db.student.insert({"name":"keyur"})
+db.student.find()
+
+use ems
+db.dropDatabase()
+

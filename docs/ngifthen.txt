@@ -1,0 +1,108 @@
+<div *ngIf="condition; else elseBlock">...</div>
+<ng-template #elseBlock>...</ng-template> 
+
+
+--
+
+<div *ngIf="isValid; else elseBlock">
+   <b>Data is valid.</b>
+</div>   
+<ng-template #elseBlock>
+  <div>
+   <b>Data is invalid.</b>
+  </div> 
+</ng-template>
+
+
+
+--
+
+
+<div>Enter Age:	
+<input type="text" [(ngModel)] = 'age'> </div> <br/>
+<div *ngIf="age < 18; else elseAgeBlock">
+   <b>Not eligible to vote.</b>
+</div>   
+<ng-template #elseAgeBlock>
+   <b>Eligible to vote.</b>
+</ng-template> 
+
+--
+
+
+<div *ngIf="condition; then thenBlock else elseBlock"></div>
+
+<ng-template #thenBlock>...</ng-template>
+<ng-template #elseBlock>...</ng-template> 
+
+
+<div *ngIf="isValid; then thenBlock; else elseBlock"> </div>
+<ng-template #thenBlock>
+  <div>   <b>Data is valid.</b>   </div> 
+</ng-template>
+<ng-template #elseBlock>
+  <div>   <b>Data is invalid.</b>   </div> 
+</ng-template>
+
+
+----------------
+
+
+getMyStyles() {
+    let myStyles = {
+       'color': this.colorFlag ? 'black' : 'yellow',
+       'font-size.em': this.isSmall ? this.small/5 : this.big/5,
+       'background-image': !this.isBackgroundRed ? 'url(\'images/red.gif\')' : 'url(\'images/green.gif\')'
+    };
+    return myStyles;
+}  
+
+<div [ngStyle]="getMyStyles()">
+	NgStyle Example
+</div>
+-------------
+
+<ul [ngSwitch]="person">
+  <li *ngSwitchCase="'Mohan'">Hello Mohan</li>
+  <li *ngSwitchCase="'Sohan'">Hello Sohan</li>
+  <li *ngSwitchCase="'Vijay'">Hello Vijay</li>
+  <li *ngSwitchDefault>Bye Bye</li>
+</ul>  
+
+
+
+-------------
+
+
+<div *ngFor="let id of ids">
+  Id is {{id}}
+  <div ngSwitch="{{id%2}}">
+	<div *ngSwitchCase="'0'" [ngClass]="'one'">I am Even.</div>
+	<div *ngSwitchCase="'1'" [ngClass]="'two'">I am Odd.</div>
+	<div *ngSwitchDefault>Nothing Found.</div>
+  </div> 	
+</div>  
+
+
+-------------
+
+
+export enum DirectionEnum {
+    East, West, North, South 
+} 
+
+dirEnum = DirectionEnum;  
+
+
+
+<div [ngSwitch]="myDir">
+  <b *ngSwitchCase="dirEnum.East">East Direction</b>
+  <b *ngSwitchCase="dirEnum.West">West Direction</b>
+  <b *ngSwitchCase="dirEnum.North">North Direction</b>
+  <b *ngSwitchCase="dirEnum.South">South Direction</b>
+  <b *ngSwitchDefault>No Direction</b>
+</div>  
+
+
+myDir = DirectionEnum.North;  
+

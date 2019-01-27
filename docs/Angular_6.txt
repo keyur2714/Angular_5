@@ -1,0 +1,43 @@
+
+	Angular - 6
+	1. Getting started
+		- Course Introduction	
+		- What is Angular
+		- Angular 2/4 vs 6
+		- Installation
+		- First Project Setup
+	2. Basics
+		- Project Structure Explanation
+		- Create Custome Component
+		- CLI Commands
+		- local reference variable
+		- Event Binding
+		- Property Bindings
+		- Typescript in 5 min
+	3. Components Communication
+		- @Input
+		- @Output
+		- @ViewChild	
+	4. Directives
+		ngIf/ngFor/ngSwitch
+		ng-template 	
+		Custome Directives
+	5. services & di (Dependency Injection)
+	6. Routing		
+	7. Observables
+	8. Forms
+		1. Template Driven Forms
+		2. Reactive Forms
+	9. Pipes
+		- Custome Pipes
+	10. Http
+		- Http 
+		- HttpClient
+		- HttpInterceptor
+	11. Authentication & Authorization
+		-Routing Guards		
+	12. Optimization & Ng Module
+	13. Deployments
+	14. Animation	
+	15. Testing
+	

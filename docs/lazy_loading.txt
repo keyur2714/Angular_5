@@ -1,0 +1,122 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { CountryComponent }  from './country.component';
+import { CountryListComponent }  from './country-list/country.list.component';
+
+const countryRoutes: Routes = [
+	{ 
+	  path: '',
+          component: CountryComponent,
+          children: [ 
+	    {
+	      path: 'country-list',
+	      component: CountryListComponent
+	    }  
+	  ]
+	}	
+];
+
+@NgModule({
+  imports: [ RouterModule.forChild(countryRoutes) ],
+  exports: [ RouterModule ]
+})
+export class CountryRoutingModule { } 
+
+
+
+import { NgModule }   from '@angular/core';
+import { CommonModule }   from '@angular/common';
+import { ReactiveFormsModule }    from '@angular/forms';
+import { CountryComponent }  from './country.component';
+import { CountryListComponent }  from './country-list/country.list.component';
+import { CountryService } from './services/country.service';
+import { CountryRoutingModule }  from './country-routing.module';
+
+@NgModule({
+  imports: [     
+        CommonModule,
+	ReactiveFormsModule,
+	CountryRoutingModule
+  ], 
+  declarations: [
+	CountryComponent,
+	CountryListComponent
+  ],
+  providers: [ CountryService ]
+})
+export class CountryModule {
+  constructor() {
+    console.log('CountryModule loaded.');
+  }
+} 
+
+
+
+------------------
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AddressComponent }  from './address.component';
+import { PageNotFoundComponent }  from './page-not-found.component';
+
+const routes: Routes = [
+   {
+	path: 'country',
+	loadChildren: 'app/country/country.module#CountryModule'
+   },
+   {
+	path: 'person',
+	loadChildren: 'app/person/person.module#PersonModule'
+   },		
+   {
+	path: 'address',
+	component: AddressComponent
+   },	
+   {
+	path: '',
+	redirectTo: '',
+	pathMatch: 'full'
+   },
+   {
+	path: '**',
+	component: PageNotFoundComponent 
+   }	
+];
+
+@NgModule({
+  imports: [ 
+        RouterModule.forRoot(routes) 
+  ],
+  exports: [ 
+        RouterModule 
+  ]
+})
+export class AppRoutingModule { } 
+
+-----------------
+
+import { NgModule }   from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent }  from './app.component';
+import { AddressComponent }  from './address.component';
+import { PageNotFoundComponent }  from './page-not-found.component';
+import { AppRoutingModule }  from './app-routing.module';
+
+@NgModule({
+  imports: [     
+    BrowserModule,
+    AppRoutingModule
+  ],
+  declarations: [
+    AppComponent,
+    AddressComponent,
+    PageNotFoundComponent
+  ],
+  providers: [ ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { 
+  constructor() {
+     console.log('AppModule loaded.');
+  }
+} 

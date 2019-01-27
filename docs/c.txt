@@ -1,0 +1,31 @@
+
+	@angular/core
+	
+	@Input() Decorator
+	
+	sent data from parent to child
+	
+
+	success-message.component.ts
+		@Input("message")
+		msg = "";
+	success-message.component.html
+		<p>{{msg}}</p>	
+	success-message.css
+		p{
+			color:green;
+		}
+department.component.html
+	<app-success-messag [message]="successMessage">
+	</app-success-messag>		
+department.component.ts
+	successMessage = "Department Saved Successfully";
+	
+
+employee.component.html
+	<app-success-messag [message]="successMessage">
+	</app-success-messag>		
+employee.component.ts
+	successMessage = "Employee Saved Successfully";
+
+	

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1 appFormate>{{title}}</h1>
+    </div>  
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <p appFormate [color]="'green'" [fontSize]="size">Hello Radhe Krishna...</p>
+    </div>  
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <select name="color" [(ngModel)]="selectedColor" (change)="changeColor()" class="form-control">
+        <option [value]="-1">-:Select Color:-</option>
+        <option *ngFor="let color of colors" [ngValue]="color">
+          {{color}}
+        </option>
+      </select>
+    </div>  
+  </div>
+</div>

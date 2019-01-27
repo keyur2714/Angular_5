@@ -1,0 +1,46 @@
+
+
+		
+	
+	-- Html -- 	
+	-- JAVASCRIPT -- 
+	 	--  CLIENT SIDE VALIDATION
+		--  MANIPULATING DOM
+	--AJAX
+		-- 
+	-- LIBERARY
+		- JQUERY
+		- MOOTOOLS
+		- PROTOTYPE.JS
+	-- CSS -
+		-- Bootstrap -- 
+	-- Html 5 - responsive 
+	.php
+	.jsp
+	.aspx
+	.asp
+
+	MVC-- Model View Controlller
+	
+	--- Dont have Any Framework on Client Side
+	-- Angular-JS -- Client Side MVC Framework
+		- Javascript
+			- Controller 
+			- view
+			-service
+	-- Single Page Application
+	
+	Server Project -- REST API 
+
+	Client Project -- Consume The REST API
+	MVC
+	-- VIEW
+	-- 
+	
+	- Angular - 2
+		- Object oriented Javascript Framework
+		- TypeScript - Super set of javascrpt
+	- Component Based Architecture
+		- 
+		 		
+	

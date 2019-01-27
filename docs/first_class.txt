@@ -1,0 +1,35 @@
+
+	Angular - 2 onwards it's component
+based architecture
+	selector
+	<h1 style="color:red;">Hello</h1>
+	
+	<app-keyur name="keyur">
+		tets
+	</app-keyur>
+
+	@Component
+	- selector
+	- template - html - view (.html)
+	- controller (component.ts)
+	- styles - css
+	- spec - unit test file
+	
+	@Component() - Decorator
+	
+ng generate component message	
+
+
+	@NgModule
+	
+	1 .Declaration
+		-- Declare Component of this module
+	2. imports
+		-- Declare Inbuild or Custom module
+	3. providers
+		- Service
+	4. exports
+		--
+	4. bootstrap:
+		-- [] -- List of Compoent that loaded when 
+		this module is getting load

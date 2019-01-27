@@ -1,0 +1,35 @@
+wifi password : 7028632327
+
+Download MongoDB from official MongoDB website.
+ Choose Windows 32 bits or 64 bits.
+ Unzip, extracts to your prefer location,
+ for example : d:\mongodb\.
+
+MongoDB/bin to Windows environment variable
+
+Create a MongoDB config file, it’s just a text file, 
+for example : d:\mongodb\mongo.config
+
+
+##store data here
+dbpath=D:\mongodb\data
+
+##all output go here
+logpath=D:\mongodb\log\mongo.log
+
+##log read and write operations
+diaglog=3
+
+MongoDB need a folder (data directory) to store its data.
+ By default, it will store in “C:\data\db“, 
+create this folder manually. MongoDB won’t create it for you. You can also specify an alternate data directory with --dbpath option. 
+
+d:\mongodb\bin>mongod --config D:\mongodb\mongo.config
+--storageEngine=mmapv1 -- for 32 bit
+all output going to: D:\mongodb\log\mongo.log
+
+d:\mongodb\bin>mongo
+
+
+mongod.exe --config E:\software\mongodb\mongo.config --storageEngine=mmapv1
+

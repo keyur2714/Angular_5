@@ -1,0 +1,33 @@
+
+	
+	class VehicleFactory{
+	{	
+	static getVehicle(type:string):Vehicle{
+	if(this.getVehicleType() === 'Car')
+		  	return new Car();
+	else if(this.getVehicleType() === 'Bike')
+			return new Bike();
+		}
+	}
+
+abstarct class Vehicle{
+	abstract getNoOfWheels():string;
+}
+class Car extends Vehicle{
+	getNoOfWheels():string{
+		return "Four";
+	}	
+}
+class Bike extends Vehicle{
+	getNoOfWheels():string{
+		return "Two";
+	}	
+}
+
+BikeComponent
+
+vehicle: Vehicle = VehicleFactory.getVehicle("Bike");			
+
+CarComponent
+
+vehicle: Vehicle = VehicleFactory.getVehicle("Car");

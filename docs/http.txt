@@ -1,0 +1,55 @@
+
+
+
+Observable--
+
+Http
+
+
+Observable is a RxJS API. 
+Observable is a representation of any set of values 
+over any amount of time.
+ All angular Http methods return instance of Observable. 
+Find some of its operators. 
+
+GET
+POST
+PUT
+DELETE
+
+map: 
+It applies a function to each value emitted 
+by source Observable and returns finally an instance of Observable. 
+catch: 
+It is called when an error is occurred. 
+catch also returns Observable. 
+
+this.departmentService.getAllDepartments()
+     .subscribe((response: Response) => {
+	console.log(response.json());
+           //Data from server has been received.	
+           //perform operation on articles
+         },
+         (error)=>{
+	//handle exception	
+         }	
+     ); 
+
+
+
+We will perform read operation using Angular Http.get() method. 
+It hits the URL using HTTP GET method. Find its syntax.
+
+get(url: string, options?: RequestOptionsArgs) : Observable<Response> 
+
+Find the description of the parameters. 
+url: Web service URL to read article. 
+options: This is optional. It is used to pass request parameter, headers etc. 
+
+Http.get() returns the instance of Observable. 
+
+post() -- save/append data
+put() -- update data
+delete() -- delete records
+
+

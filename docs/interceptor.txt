@@ -1,0 +1,43 @@
+Angular provides 
+HttpInterceptor interface 
+that is used to intercept HttpRequest and handle them. 
+
+HttpInterceptor provides intercept() method that generally intercepts outgoing request before calling next interceptor. 
+intercept() method accepts HttpRequest and HttpHandler as arguments. To create interceptor, 
+we need to create a service that will implement HttpInterceptor and define intercept() method.
+ Here on this page we will create an interceptor for logging. We will log request method, request URL and request completion time with success or failure message.
+
+
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpResponse } from '@angular/common/http';
+import { finalize, tap } from 'rxjs/operators';
+
+@Injectable()
+export class LoggingInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    const startTime = Date.now();
+    let status: string;
+
+    return next.handle(req).pipe(
+        tap(
+          event => {
+            status = '';
+            if (event instanceof HttpResponse) {
+              status = 'succeeded';
+            }
+          },
+          error => status = 'failed'
+        ),
+        finalize(() => {
+          const elapsedTime = Date.now() - startTime;
+          const message = req.method + " " + req.urlWithParams +" "+ status 
+          + " in " + elapsedTime + "ms";
+          
+          this.logDetails(message);
+        })
+    );
+  }
+  private logDetails(msg: string) {
+    console.log(msg);
+  }
+} 

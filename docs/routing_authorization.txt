@@ -1,0 +1,51 @@
+In the Angular application in which authentication and 
+authorization is required to navigate a route, 
+the role of Angular route guard comes into the picture.
+
+Route Guards
+
+-Guarding routes means whether we can visit the route or not.
+- For example in login authentication based application, 
+a user has to login first to enter into the application
+- If there is no route guard then anyone can access any link but using route guard we restrict the access of links.
+-Angular provides following interfaces that are contained in 
+@angular/router package. 
+1. CanActivate 
+2. CanActivateChild 
+3. CanDeactivate 
+4. Resolve 
+5. CanLoad
+
+- CanActivate decides whether we can navigate to a route 
+or not.
+ It is used to redirect to login page to require authentication.
+-CanActivateChild decides whether we can navigate to child 
+routes or not. 
+It is used to decide link access on the basis of authorization.
+- CanActivate is an Angular interface.
+
+- CanActivate interface has a method named as canActivate() 
+which has following arguments.
+--ActivatedRouteSnapshot: Contains the information about a 
+route associated 
+with component loaded in outlet in particular time. 
+It can traverse router state tree. 
+--RouterStateSnapshot: It is a tree of activated route snapshots. 
+It has url property that gives the URL from which 
+this snapshot was created. 
+
+--canActivate() returns boolean value or Observable or Promise of boolean value. 
+
+
+---
+1. CanActivateChild is an Angular interface to guard child routes. 
+-Suppose a user has been authenticated but not authorized to visit the child routes, 
+so child routes can be guarded using CanActivateChild.
+
+
+
+
+
+
+
+

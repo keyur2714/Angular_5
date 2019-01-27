@@ -1,0 +1,41 @@
+username = new FormControl(); 
+
+<input [formControl]="username" pattern="^[a-z0-9_-]{8,15}$"> 
+
+unamePattern = "^[a-z0-9_-]{8,15}$"; 
+
+<input [formControl]="username" [pattern]="unamePattern"> 
+
+<div *ngIf="username.errors?.pattern">
+     User name not valid.
+</div> 
+
+-------Pattern Validation with ngModel
+
+unamePattern = "^[a-z0-9_-]{8,15}$"; 
+
+
+<input name="username" [ngModel]="user.username" [pattern]="unamePattern" #uname="ngModel"> 
+
+<div *ngIf="uname.errors?.pattern"> 
+   User name not valid.
+</div> 
+
+
+--
+unamePattern = "^[a-z0-9_-]{8,15}$";
+userForm = this.formBuilder.group({
+    username: '',
+    ------
+})
+
+
+<input formControlName="username" [pattern]="unamePattern"> 
+
+get username() {
+     return this.userForm.get('username');
+} 
+
+<div *ngIf="username.errors?.pattern">
+     User name not valid.
+</div> 	
