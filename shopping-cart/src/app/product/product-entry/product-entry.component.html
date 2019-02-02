@@ -1,0 +1,53 @@
+<form #f=ngForm (ngSubmit)="save(f)">
+  <div class="row form-group">
+    <div class="col-sm-2"><sup>*</sup>Code :</div>
+    <div class="col-sm-4"><input type=text name=code class="form-control" [(ngModel)]="product.code" required #code=ngModel /></div>
+    <div class="col-sm-6 alert alert-danger" *ngIf="code.invalid && code.touched">
+      Code is Mandatory Field.
+    </div>
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-2"><sup>*</sup>Desc :</div>
+      <div class="col-sm-4"><input type=text name=desc class="form-control" [(ngModel)]="product.desc" required #desc=ngModel /></div>
+      <div class="col-sm-6 alert alert-danger" *ngIf="desc.invalid && desc.touched">
+        Description is Mandatory Field.
+      </div>
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-2"><sup>*</sup>Price :</div>
+      <div class="col-sm-4"><input type=number name=price class="form-control" [(ngModel)]="product.price" required #price=ngModel /></div>
+      <div class="col-sm-6 alert alert-danger" *ngIf="price.invalid && price.touched">
+        Price is Mandatory Field.
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-info" [disabled]="f.invalid">Save</button>
+    </div>
+  </div>  
+</form>
+<div class="row" *ngIf="isSubmited">
+  <div class="col">
+    <table>
+      <tr>
+        <td>Code</td>
+        <td>{{product.code}}</td>
+      </tr>
+      <tr>
+          <td>Desc</td>
+          <td>{{product.desc}}</td>
+      </tr>
+      <tr>
+          <td>Price</td>
+          <td>{{product.price}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col"> 
+      <div class="row">
+          <div class="col-md-12"> 
+            <app-product-list></app-product-list>
+          </div>
+      </div>
+  </div>
+</div>
