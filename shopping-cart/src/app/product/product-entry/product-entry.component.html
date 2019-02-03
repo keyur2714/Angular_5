@@ -1,10 +1,28 @@
 <form #f=ngForm (ngSubmit)="save(f)">
   <div class="row form-group">
-    <div class="col-sm-2"><sup>*</sup>Code :</div>
-    <div class="col-sm-4"><input type=text name=code class="form-control" [(ngModel)]="product.code" required #code=ngModel /></div>
-    <div class="col-sm-6 alert alert-danger" *ngIf="code.invalid && code.touched">
-      Code is Mandatory Field.
+    <div class="col-sm-2">
+      Category:
     </div>
+    <div class="col-sm-4">      
+        <select class="form-control" name="category" [(ngModel)]="product.category">
+          <option value="-1">-:Select Category:-</option>
+          <option *ngFor="let category of productCategoryList" [ngValue]="category.code">
+            {{category.desc}}
+          </option>
+        </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-2"><sup>*</sup>Code :</div>
+    <div class="col-sm-4"><input type=text name=code class="form-control" [(ngModel)]="product.code" required minlength="4" #code=ngModel /></div>
+    <div *ngIf="code.errors && code.touched && code.invalid" class="col-sm-6 alert alert-danger">
+        <span *ngIf="code.errors['required']" >
+            Code is Mandatory Field.
+        </span>
+        <span *ngIf="code.errors['minlength']">
+            Code is Min 4 Char.
+        </span>
+    </div>    
   </div>
   <div class="row form-group">
       <div class="col-sm-2"><sup>*</sup>Desc :</div>
@@ -20,6 +38,22 @@
         Price is Mandatory Field.
       </div>
   </div>
+  <div class="row form-group">
+    <div class="col-sm-2"><sup>*</sup>Type :</div>
+    <div class="col-sm-4">
+      <input type=radio name=type value="new"  [(ngModel)]="product.type" required #type=ngModel />New
+      <input type=radio name=type value="old"  [(ngModel)]="product.type" required #type=ngModel />Old
+    </div>
+    <div class="col-sm-6 alert alert-danger" *ngIf="type.invalid">
+      Type is Mandatory Field.
+    </div>
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-2">Warranty:</div>
+      <div class="col-sm-4">
+        <input type=checkbox name=warranty value="yes" [(ngModel)]="product.warranty" #warranty=ngModel />        
+      </div>      
+  </div>
   <div class="row">
     <div class="col-sm-4">
         <button type="submit" class="btn btn-info" [disabled]="f.invalid">Save</button>
@@ -29,6 +63,10 @@
 <div class="row" *ngIf="isSubmited">
   <div class="col">
     <table>
+      <tr>
+          <td>Category</td>
+          <td>{{product.category}}</td>
+      </tr>
       <tr>
         <td>Code</td>
         <td>{{product.code}}</td>
@@ -40,6 +78,14 @@
       <tr>
           <td>Price</td>
           <td>{{product.price}}</td>
+      </tr>
+      <tr>
+          <td>Type</td>
+          <td>{{product.type}}</td>
+      </tr>
+      <tr>
+          <td>Warranty</td>
+          <td>{{product.warranty}}</td>
       </tr>
     </table>
   </div>

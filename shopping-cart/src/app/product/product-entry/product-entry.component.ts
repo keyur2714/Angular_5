@@ -11,9 +11,27 @@ export class ProductEntryComponent implements OnInit {
   product : Product = new Product();
   isSubmited : boolean = false;
 
+  productCategoryList = [
+    {
+      code : 'ELC',
+      desc : 'Electronics'
+    },
+    {
+      code : 'CLOTH',
+      desc : 'Clothing'
+    },
+    {
+      code : 'FWARE',
+      desc : 'Foot ware'
+    }
+];
+
   constructor() { }
 
   ngOnInit() {
+    this.product.category = 'FWARE';  
+    this.product.type = 'new';
+    this.product.warranty = true;
   }
 
   save(frm):void{
