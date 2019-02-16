@@ -1,0 +1,50 @@
+<form  [formGroup]="customerForm" (ngSubmit)="save()">
+  <div class="row form-group">
+    <div class="col-sm-3"><sup>*</sup>Name :</div>
+    <div class="col-sm-4"><input type=text name=name class="form-control" formControlName="name" /></div>
+    <div *ngIf="customerForm.get('name').errors && customerForm.get('name').touched && customerForm.get('name').invalid" class="col-sm-5 alert alert-danger">
+        <span *ngIf="customerForm.get('name').errors['required']" >
+            Name is Mandatory Field.
+        </span>
+        <span *ngIf="customerForm.get('name').errors['maxlength']">
+            Code is Max 3 Char.
+        </span>
+    </div>     
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-3"><sup>*</sup>Address 1 :</div>
+      <div class="col-sm-4"><input type=text name=address1 class="form-control" formControlName="address1" /></div>
+      <div *ngIf="customerForm.get('address1').errors && customerForm.get('address1').touched && customerForm.get('address1').invalid" class="col-sm-5 alert alert-danger">
+          <span *ngIf="customerForm.get('address1').errors['required']" >
+              Address is Mandatory Field.
+          </span>      
+      </div>     
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-3">Address 2 :</div>
+      <div class="col-sm-4"><input type=text name=address2 class="form-control" formControlName="address2" /></div>      
+  </div>
+  <div class="row form-group">
+      <div class="col-sm-3"><sup>*</sup>Contact No :</div>
+      <div class="col-sm-4"><input type=text name=contactNo class="form-control" formControlName="contactNo" /></div>      
+      <div *ngIf="customerForm.get('contactNo').errors && customerForm.get('contactNo').touched && customerForm.get('contactNo').invalid" class="col-sm-5 alert alert-danger">
+          <span *ngIf="customerForm.get('contactNo').errors['required']" >
+              Contact No is Mandatory Field.
+          </span>      
+          <span *ngIf="customerForm.get('contactNo').errors['minlength']" >
+              Contact No is Min 10 Char.
+          </span>      
+      </div>     
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+          <button type="button" class="btn btn-info" (click)="updateValidation()">Change Validation</button>
+    </div>
+    <div class="col-sm-4">
+        <button type="submit" class="btn btn-info" [disabled]="customerForm.invalid">Save</button>
+    </div>
+  </div>  
+</form>
+<div *ngIf="customer.name != ''">
+  {{customer | json}}
+</div>
