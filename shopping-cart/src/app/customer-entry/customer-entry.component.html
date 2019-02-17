@@ -6,8 +6,8 @@
         <span *ngIf="customerForm.get('name').errors['required']" >
             Name is Mandatory Field.
         </span>
-        <span *ngIf="customerForm.get('name').errors['maxlength']">
-            Code is Max 3 Char.
+        <span *ngIf="customerForm.get('name').errors['pattern']">
+            Invalid Name (Name only contains Alphabets).
         </span>
     </div>     
   </div>
@@ -35,6 +35,13 @@
               Contact No is Min 10 Char.
           </span>      
       </div>     
+  </div>
+  <div formArrayName="preferedPayement">      
+    <div *ngFor="let paymentOtp of customerForm.get('preferedPayement').controls;let i=index" class="row form-group">
+            <div class="col-sm-3"><sup>*</sup>Payment :</div>
+            <div class="col-sm-4"><input type=text [formControlName]="i" class="form-control" /></div>        
+            <div class="col-sm-3"><button class="btn btn-info" (click)="addPaymentOpt()">Add More</button></div>
+    </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
