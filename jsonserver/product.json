@@ -1,0 +1,81 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "code": "M02",
+      "description": "Mobile MI",
+      "unitPrice": "11001",
+      "warranty": "Y",
+      "color": "WHITE"
+    },
+    {
+      "id": 2,
+      "code": "M02",
+      "description": "Mobile MI A2",
+      "unitPrice": "15000",
+      "warranty": "Y",
+      "color": "WHITE"
+    },
+    {
+      "id": 3,
+      "code": "M03",
+      "description": "Mobile MI Note 5 Pro",
+      "unitPrice": "15500",
+      "warranty": "Y",
+      "color": "BLACK"
+    },
+    {
+      "id": 4,
+      "code": "M04",
+      "description": "Mobile MI Note 5",
+      "unitPrice": "12001",
+      "warranty": "Y",
+      "color": "SILVER"
+    },
+    {
+      "id": "5",
+      "code": "MOTOG",
+      "description": "Moto G s5",
+      "unitPrice": "17000",
+      "warranty": "Y",
+      "color": "WHITE"
+    }
+  ],
+  "department": [
+    {
+      "id": 10,
+      "code": "IT",
+      "desc": "It Dept"
+    },
+    {
+      "id": 20,
+      "code": "SALES",
+      "desc": "Sales Dept"
+    },
+    {
+      "id": 3,
+      "code": "HR",
+      "desc": "HR Dept"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "keyur",
+      "password": "Denish",
+      "token": "Keyur@Denish"
+    },
+    {
+      "id": 2,
+      "userName": "denish",
+      "password": "Keyur",
+      "token": "Denish@Keyur"
+    },
+    {
+      "id": 3,
+      "userName": "Ami",
+      "password": "Keyur",
+      "token": "Ami@Keyur"
+    }
+  ]
+}
