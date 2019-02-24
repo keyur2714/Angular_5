@@ -53,9 +53,14 @@
       "desc": "Sales Dept"
     },
     {
-      "id": 3,
-      "code": "HR",
-      "desc": "HR Dept"
+      "id": "40",
+      "code": "PURCHASE",
+      "desc": "Purchase Dept"
+    },
+    {
+      "id": "50",
+      "code": "ADMIN",
+      "desc": "Admin Dept"
     }
   ],
   "users": [

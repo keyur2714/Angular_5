@@ -1,0 +1,67 @@
+<div class="row" *ngIf="statusCode === 200">
+  <div class="col-sm-12 alert alert-success">
+     Department Saved Successfully. 
+  </div>
+</div>
+<div class="row" *ngIf="statusCode === 204">
+    <div class="col-sm-12 alert alert-danger">
+       Department Deleted Successfully. 
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-12">
+    <form [formGroup]="deptEntryForm" (ngSubmit)="save()">
+      <div class="row form-group">
+        <div class="col-sm-4">Dept Id:</div>
+        <div class="col-sm-4">
+          <input type=text name=deptId formControlName="id" class="form-control"/>
+        </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-sm-4">Dept Code:</div>
+          <div class="col-sm-4">
+            <input type=text name=deptCode formControlName="code" class="form-control"/>
+          </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-sm-4">Dept Desc:</div>
+          <div class="col-sm-4">
+            <input type=text name=deptDesc formControlName="desc" class="form-control"/>
+          </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-sm-6">
+            <button class="btn btn-info">Save</button>
+          </div>      
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header bg-info">
+        Department List
+      </div>
+      <div class="card-body">
+        <table class="table bg-dark text-white">
+          <tr>
+            <th>Id</th>
+            <th>Dept Code</th>
+            <th>Dept Name</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let dept of deptList">
+            <td>{{dept.id}}</td>
+            <td>{{dept.code}}</td>
+            <td>{{dept.desc}}</td>
+            <td>
+              <button class="btn btn-warning mr-2" (click)="edit(dept.id)">Edit</button>
+              <button class="btn btn-danger mr-2" (click)="delete(dept.id)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
