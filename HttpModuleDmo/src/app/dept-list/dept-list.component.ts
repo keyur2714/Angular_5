@@ -13,6 +13,7 @@ export class DeptListComponent implements OnInit {
 
   department : Department = new Department();
   statusCode : number = 0;
+  isUpdate : boolean = false;
 
   deptEntryForm = new FormGroup({
     id : new FormControl('',Validators.required),
@@ -55,7 +56,24 @@ export class DeptListComponent implements OnInit {
     )
   }
 
+  update(){
+    console.log(this.deptEntryForm.value);
+    this.department = this.deptEntryForm.value;
+    this.departmentService.updateDept(this.department).subscribe(
+      (data)=>{
+        console.log(data);
+        this.statusCode = 205;
+        this.getDeptList();
+        this.isUpdate = false;
+        this.deptEntryForm.setValue({"id":'',"code":'',"desc":''});
+      },
+      (error)=>{
+        this.statusCode = 401;
+      }
+    )
+  }
   edit(id:number):void{    
+    this.isUpdate = true;
     this.departmentService.getDeptById(id).subscribe(
       (data)=>{
         this.deptEntryForm.setValue(data);

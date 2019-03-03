@@ -18,6 +18,10 @@ export class DepartmentService{
         return this.http.post<Department>(this.APIUrl,department);
     }
 
+    updateDept(department: Department):Observable<Department>{
+        return this.http.put<Department>(this.APIUrl+"/"+department.id,department);
+    }
+
     getDeptById(id:number):Observable<Department>{
         return this.http.get<Department>(this.APIUrl+"/"+id);
     }

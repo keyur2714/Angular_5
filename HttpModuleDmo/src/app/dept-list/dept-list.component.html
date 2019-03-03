@@ -7,7 +7,12 @@
     <div class="col-sm-12 alert alert-danger">
        Department Deleted Successfully. 
     </div>
+</div>
+<div class="row" *ngIf="statusCode === 205">
+  <div class="col-sm-12 alert alert-danger">
+     Department Updated Successfully. 
   </div>
+</div>
 <div class="row">
   <div class="col-sm-12">
     <form [formGroup]="deptEntryForm" (ngSubmit)="save()">
@@ -30,8 +35,11 @@
           </div>
       </div>
       <div class="row form-group">
-          <div class="col-sm-6">
+          <div class="col-sm-6" *ngIf="this.isUpdate === false">
             <button class="btn btn-info">Save</button>
+          </div>      
+          <div class="col-sm-6" *ngIf="this.isUpdate">
+            <button type="button" class="btn btn-info" (click)="update()">Update</button>
           </div>      
       </div>
     </form>
