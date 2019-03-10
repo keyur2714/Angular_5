@@ -25,7 +25,7 @@ Component Communication	-- Done
 -- DI & Services --
 	1. Dependency Injection - Done
 	2. Services / Providers -- Done
--- local storage/session storage -- Done
+-- local storage/session storage --
 -- Observable from RXJS -- 
 	-- operators (map//catch) Done
 	-- switch map
