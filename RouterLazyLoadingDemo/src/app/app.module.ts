@@ -12,6 +12,8 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeEntryComponent } from './employee/employee-entry/employee-entry.component';
 import { EmployeeModule } from './employee/employee.module';
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthenticationService } from './auth/authentication.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { EmployeeModule } from './employee/employee.module';
     //EmployeeModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

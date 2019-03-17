@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../auth/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +9,25 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  authStatus: boolean = false;
+
+  constructor(private router : Router,private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
   }
 
   authenticate():void{
-    this.router.navigate(['home']);
+    this.authenticationService.authenticate('denish','keyur').subscribe(
+      (status)=>{
+        this.authStatus = status;
+        if(this.authStatus){
+          this.router.navigate([this.authenticationService.getSuccessUrl()]);
+        }else{
+          this.router.navigate(['login']);
+        }
+      }
+    )
+    
+    
   }
 }

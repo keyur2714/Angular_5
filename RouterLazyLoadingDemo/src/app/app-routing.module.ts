@@ -7,12 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeDetailComponent } from './employee/employee-detail/employee-detail.component';
 import { EmployeeEntryComponent } from './employee/employee-entry/employee-entry.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 const routes: Routes = [
-  {path : '' , component : HomeComponent},
-  {path : 'home' , component : HomeComponent},  
-  {path : 'aboutus' , component : AboutusComponent},
-  {path : 'contactus' , component : ContactusComponent},
+  {path : '' , component : HomeComponent, canActivate : [AuthGuard]},
+  {path : 'home' , component : HomeComponent , canActivate : [AuthGuard]},  
+  {path : 'aboutus' , component : AboutusComponent, canActivate : [AuthGuard]},
+  {path : 'contactus' , component : ContactusComponent, canActivate : [AuthGuard]},
   {path : 'login' , component : LoginComponent},  
   { 
     path:'employee-list',         

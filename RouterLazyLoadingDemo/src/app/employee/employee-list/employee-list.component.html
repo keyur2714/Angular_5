@@ -2,9 +2,7 @@
   employee-list works!
 </p>
 <button (click)="addEmployee()" class="btn btn-info">Add New Employee</button>
-|
-<a [routerLink]="['/employee-detail/27']" [queryParams]="{name:'keyur',city:'pune'}">Detail</a>
-|
+
 <a [routerLink]="['employee-detail',27]" [queryParams]="{name:'keyur',city:'pune'}">Detail Same Page</a>
 <div class="row">
   <div class="col-sm-6">
