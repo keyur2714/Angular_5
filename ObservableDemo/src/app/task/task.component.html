@@ -1,0 +1,12 @@
+<table class="table table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Task</th>
+    <th>Estimation</th>
+  </tr>
+  <tr *ngFor="let task of taskList">
+    <td>{{task.id}}</td>
+    <td>{{task.taskDesc}}</td>
+    <td>{{task.estimation}}</td>
+  </tr>
+</table>
