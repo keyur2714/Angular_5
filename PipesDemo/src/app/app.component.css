@@ -1,0 +1,23 @@
+.MYSTYLE{
+    color: red;
+}
+.d{
+    color: green;
+    background: palevioletred;
+}
+.f{
+    color: blue;
+    background: palevioletred;
+}
+.s{
+    color: orange;
+    background: palevioletred;
+}
+.p{
+    color: purple;
+    background: white;    
+}
+.fail{
+    color: red;
+    background-image: url('../assets/images/fail.jpg');
+}

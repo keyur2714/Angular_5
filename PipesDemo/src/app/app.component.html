@@ -1,0 +1,29 @@
+<h1 [class]="className | uppercase">
+  {{title | uppercase |  lowercase | uppercase}}
+</h1>
+<p>
+  {{today | date : 'MM/dd/yyyy hh:mm:ss a' }}
+</p>
+
+<pre>
+  {{emp | json}}
+</pre>
+
+<h1>
+  {{numbers | async}}
+</h1>
+
+<h2>
+{{accNumber | mask : '#' : 4}}
+</h2>
+{{name | welcome}}
+<p>
+{{emp.name | welcome}}
+</p>
+
+<ul>
+  <li *ngFor="let grade of gradeList" [class]="grade | uppercase | status | lowercase">
+    {{grade}}
+  </li>
+</ul>
+<img src='../assets/images/fail.jpg' width="100px"/>
