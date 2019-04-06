@@ -25,23 +25,22 @@ Component Communication	-- Done
 -- DI & Services --
 	1. Dependency Injection - Done
 	2. Services / Providers -- Done
--- local storage/session storage --
--- Observable from RXJS -- 
+-- local storage/session storage -- Remaining
+-- Observable from RXJS -- Done
 	-- operators (map//catch) Done
-	-- switch map
--- HttpModule --
+-- HttpClientModule -- Done
 --JSON SERVER -- Done	 
 -- Routing Module & Routing with --
-Lazy Loading :: -- 
+Lazy Loading :: -- Done
 -- Aunticationn & Authorization 
-	-- Http Interceptor -- Done
-	-- JWT  --
+	-- Http Interceptor -- Remaining
+	-- JWT  -- Remaining
 	-- Routing with guards - -- Done
 ------------Start small project--------
 Pipes Inbuilt & custome pipe -- Done
 Unit Testing -- 
 Animations  --
-Deployments-- how to deploy on server	--Done
+Deployments-- how to deploy on server	--
 Angular Material -  
 model popup 		
 

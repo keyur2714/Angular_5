@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+
+<p>
+  <button (click)="toggleState()">Toggle State</button>
+</p>
+
+<div style="width:100px;height:100px" [@stateTrigger]="state">
+</div>
+
+<table [@rotateTrigger]="rotateState">
+  <tr>
+      <th>Name</th>  
+  </tr>
+  <tr *ngFor="let name of names">
+      <td>{{name}}</td>
+  </tr>
+  
+</table>
