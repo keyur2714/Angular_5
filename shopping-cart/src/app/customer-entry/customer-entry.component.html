@@ -39,8 +39,8 @@
   <div formArrayName="preferedPayement">      
     <div *ngFor="let paymentOtp of customerForm.get('preferedPayement').controls;let i=index" class="row form-group">
             <div class="col-sm-3"><sup>*</sup>Payment :</div>
-            <div class="col-sm-4"><input type=text [formControlName]="i" class="form-control" /></div>        
-            <div class="col-sm-3"><button class="btn btn-info" (click)="addPaymentOpt()">Add More</button></div>
+            <div class="col-sm-4"><input type=text [formControlName]="i" [name]="i" class="form-control" /></div>        
+            <div class="col-sm-3"><button class="btn btn-info"(click)="addPaymentOpt()">Add More</button></div>
     </div>
   </div>
   <div class="row">

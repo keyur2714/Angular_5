@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   }
 
   authenticate():void{
-    this.authenticationService.authenticate('denish','keyur').subscribe(
+    this.authenticationService.authenticate('keyur','denish').subscribe(
       (status)=>{
         this.authStatus = status;
         if(this.authStatus){
